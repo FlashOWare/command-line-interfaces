@@ -5,4 +5,27 @@
     <File Path="Directory.Build.targets" />
     <File Path="Directory.Packages.props" />
   </Folder>
+  <Folder Name="/examples/">
+    <File Path="examples/.globalconfig" />
+    <File Path="examples/Directory.Build.props" />
+    <Project Path="examples/FlashOWare.CommandLine.Example.CSharp/FlashOWare.CommandLine.Example.CSharp.csproj" />
+    <Project Path="examples/FlashOWare.CommandLine.Example.FSharp/FlashOWare.CommandLine.Example.FSharp.fsproj" />
+    <Project Path="examples/FlashOWare.CommandLine.Example.VisualBasic/FlashOWare.CommandLine.Example.VisualBasic.vbproj" />
+  </Folder>
+  <Folder Name="/lib/">
+    <File Path="lib/.globalconfig" />
+    <File Path="lib/Directory.Build.props" />
+    <Project Path="lib/FlashOWare.CommandLine.Introspection.CliSchema/FlashOWare.CommandLine.Introspection.CliSchema.csproj" />
+    <Project Path="lib/FlashOWare.CommandLine.Introspection.OpenCli/FlashOWare.CommandLine.Introspection.OpenCli.csproj" />
+  </Folder>
+  <Folder Name="/perf/">
+    <File Path="perf/.globalconfig" />
+    <File Path="perf/Directory.Build.props" />
+    <Project Path="perf/FlashOWare.CommandLine.Introspection.Benchmarks/FlashOWare.CommandLine.Introspection.Benchmarks.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <File Path="tests/.globalconfig" />
+    <File Path="tests/Directory.Build.props" />
+    <Project Path="tests/FlashOWare.CommandLine.Introspection.Tests/FlashOWare.CommandLine.Introspection.Tests.csproj" />
+  </Folder>
 </Solution>

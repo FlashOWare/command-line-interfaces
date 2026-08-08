@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <AssemblyName>FlashOWare.CommandLine.Example.VisualBasic</AssemblyName>
+    <RootNamespace>FlashOWare.CommandLine.Example</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\lib\FlashOWare.CommandLine.Introspection.CliSchema\FlashOWare.CommandLine.Introspection.CliSchema.csproj" />
+    <ProjectReference Include="..\..\lib\FlashOWare.CommandLine.Introspection.OpenCli\FlashOWare.CommandLine.Introspection.OpenCli.csproj" />
+  </ItemGroup>
+
+</Project>
