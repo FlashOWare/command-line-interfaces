@@ -8,6 +8,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Octokit" />
+    <PackageReference Include="System.CommandLine" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\lib\FlashOWare.CommandLine.Introspection.CliSchema\FlashOWare.CommandLine.Introspection.CliSchema.csproj" />
     <ProjectReference Include="..\..\lib\FlashOWare.CommandLine.Introspection.OpenCli\FlashOWare.CommandLine.Introspection.OpenCli.csproj" />
   </ItemGroup>
