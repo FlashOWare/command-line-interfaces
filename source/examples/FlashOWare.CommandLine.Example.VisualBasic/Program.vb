@@ -9,6 +9,7 @@ Imports Octokit
 Friend Module Program
 	Friend Function Main(args As String()) As Integer
 		Dim rootCommand As New RootCommand("Visual Basic sample app.")
+
 		Dim [option] As New [Option](Of Boolean)("--language", New String() {"-l", "--lang"}) With {
 			.Description = "Display the .NET language in use.",
 			.Arity = ArgumentArity.Zero,
@@ -47,14 +48,14 @@ Friend Module Program
 				Const tabString As String = "    "
 				Dim output As TextWriter = parseResult.InvocationConfiguration.Output
 
-				Await output.WriteLineAsync($"Repository")
+				Await output.WriteLineAsync("Repository")
 				Await output.WriteLineAsync($"{tabString}Full Name: {repository.FullName}")
 				Await output.WriteLineAsync($"{tabString}Stargazers: {repository.StargazersCount}")
 				Await output.WriteLineAsync($"{tabString}Watchers: {repository.SubscribersCount}")
 				Await output.WriteLineAsync($"{tabString}Forks: {repository.ForksCount}")
 				Await output.WriteLineAsync($"{tabString}Open Issues: {repository.OpenIssuesCount}")
 
-				Await output.WriteLineAsync($"Rate Limiting")
+				Await output.WriteLineAsync("Rate Limiting")
 				Await output.WriteLineAsync($"{tabString}Requests per hour: {rateLimit.Limit - rateLimit.Remaining} / {rateLimit.Limit}")
 				Await output.WriteLineAsync($"{tabString}Window resets at: {rateLimit.Reset.LocalDateTime:yyyy-MM-dd HH:mm:ss.fffffff}")
 
@@ -78,9 +79,7 @@ Friend NotInheritable Class LanguageCommandLineAction
 
 	Public Overrides Function Invoke(parseResult As ParseResult) As Integer
 		Dim output As TextWriter = parseResult.InvocationConfiguration.Output
-
 		output.WriteLine("Visual Basic")
-
 		Return 0
 	End Function
 End Class
@@ -92,10 +91,10 @@ Friend NotInheritable Class ConfigCommandLineAction
 		Const tabString As String = "    "
 		Dim output As TextWriter = parseResult.InvocationConfiguration.Output
 
-		output.WriteLine($"Configuration")
+		output.WriteLine("Configuration")
 		output.WriteLine($"{tabString}EnablePosixBundling: {parseResult.Configuration.EnablePosixBundling}")
 
-		output.WriteLine($"Invocation")
+		output.WriteLine("Invocation")
 		output.WriteLine($"{tabString}EnableDefaultExceptionHandler: {parseResult.InvocationConfiguration.EnableDefaultExceptionHandler}")
 		output.WriteLine($"{tabString}ProcessTerminationTimeout: {If(parseResult.InvocationConfiguration.ProcessTerminationTimeout.HasValue,
 			parseResult.InvocationConfiguration.ProcessTerminationTimeout.Value.ToString("c"),

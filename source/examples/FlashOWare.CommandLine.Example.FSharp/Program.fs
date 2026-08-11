@@ -10,6 +10,7 @@ open Octokit
 [<Sealed>]
 type private LanguageCommandLineAction() =
     inherit SynchronousCommandLineAction()
+
     override this.Invoke(parseResult: ParseResult) =
         let output = parseResult.InvocationConfiguration.Output
         output.WriteLine("F#")
@@ -18,6 +19,7 @@ type private LanguageCommandLineAction() =
 [<Sealed>]
 type private ConfigCommandLineAction() =
     inherit SynchronousCommandLineAction()
+
     override this.Invoke(parseResult: ParseResult) =
         let tabString = "    "
         let output = parseResult.InvocationConfiguration.Output

@@ -5,6 +5,7 @@ using System.Reflection;
 using Octokit;
 
 RootCommand rootCommand = new("C# sample app.");
+
 Option<bool> option = new("--language", ["-l", "--lang"])
 {
 	Description = "Display the .NET language in use.",
@@ -18,9 +19,9 @@ Argument<string> argument = new("FULL-NAME")
 {
 	Description = """The full name of the repository in the form of "owner/repo".""",
 	Arity = ArgumentArity.ZeroOrOne,
-	DefaultValueFactory = static (ArgumentResult argumentResult) => "FlashOWare/command-line-interfaces",
+	DefaultValueFactory = static string (ArgumentResult argumentResult) => "FlashOWare/command-line-interfaces",
 };
-argument.Validators.Add((ArgumentResult argumentResult) =>
+argument.Validators.Add(void (ArgumentResult argumentResult) =>
 {
 	string value = argumentResult.GetRequiredValue(argument);
 
@@ -31,7 +32,7 @@ argument.Validators.Add((ArgumentResult argumentResult) =>
 	}
 });
 command.Arguments.Add(argument);
-command.SetAction(async (ParseResult parseResult, CancellationToken cancellationToken) =>
+command.SetAction(async Task<int> (ParseResult parseResult, CancellationToken cancellationToken) =>
 {
 	string fullName = parseResult.GetRequiredValue(argument);
 	int index = fullName.IndexOf('/');
@@ -79,9 +80,7 @@ internal sealed class LanguageCommandLineAction : SynchronousCommandLineAction
 	public override int Invoke(ParseResult parseResult)
 	{
 		TextWriter output = parseResult.InvocationConfiguration.Output;
-
 		output.WriteLine("C#");
-
 		return 0;
 	}
 }
