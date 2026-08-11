@@ -45,19 +45,19 @@ Friend Module Program
 				Dim repository As Repository = Await client.Repository.Get(owner, repo)
 				Dim rateLimit As RateLimit = client.GetLastApiInfo().RateLimit
 
-				Const tabString As String = "    "
+				Const TabString As String = "    "
 				Dim output As TextWriter = parseResult.InvocationConfiguration.Output
 
 				Await output.WriteLineAsync("Repository")
-				Await output.WriteLineAsync($"{tabString}Full Name: {repository.FullName}")
-				Await output.WriteLineAsync($"{tabString}Stargazers: {repository.StargazersCount}")
-				Await output.WriteLineAsync($"{tabString}Watchers: {repository.SubscribersCount}")
-				Await output.WriteLineAsync($"{tabString}Forks: {repository.ForksCount}")
-				Await output.WriteLineAsync($"{tabString}Open Issues: {repository.OpenIssuesCount}")
+				Await output.WriteLineAsync($"{TabString}Full Name: {repository.FullName}")
+				Await output.WriteLineAsync($"{TabString}Stargazers: {repository.StargazersCount}")
+				Await output.WriteLineAsync($"{TabString}Watchers: {repository.SubscribersCount}")
+				Await output.WriteLineAsync($"{TabString}Forks: {repository.ForksCount}")
+				Await output.WriteLineAsync($"{TabString}Open Issues: {repository.OpenIssuesCount}")
 
 				Await output.WriteLineAsync("Rate Limiting")
-				Await output.WriteLineAsync($"{tabString}Requests per hour: {rateLimit.Limit - rateLimit.Remaining} / {rateLimit.Limit}")
-				Await output.WriteLineAsync($"{tabString}Window resets at: {rateLimit.Reset.LocalDateTime:yyyy-MM-dd HH:mm:ss.fffffff}")
+				Await output.WriteLineAsync($"{TabString}Requests per hour: {rateLimit.Limit - rateLimit.Remaining} / {rateLimit.Limit}")
+				Await output.WriteLineAsync($"{TabString}Window resets at: {rateLimit.Reset.LocalDateTime:yyyy-MM-dd HH:mm:ss.fffffff}")
 
 				Return 0
 			End Function)
@@ -88,19 +88,19 @@ Friend NotInheritable Class ConfigCommandLineAction
 	Inherits SynchronousCommandLineAction
 
 	Public Overrides Function Invoke(parseResult As ParseResult) As Integer
-		Const tabString As String = "    "
+		Const TabString As String = "    "
 		Dim output As TextWriter = parseResult.InvocationConfiguration.Output
 
 		output.WriteLine("Configuration")
-		output.WriteLine($"{tabString}EnablePosixBundling: {parseResult.Configuration.EnablePosixBundling}")
+		output.WriteLine($"{TabString}EnablePosixBundling: {parseResult.Configuration.EnablePosixBundling}")
 
 		output.WriteLine("Invocation")
-		output.WriteLine($"{tabString}EnableDefaultExceptionHandler: {parseResult.InvocationConfiguration.EnableDefaultExceptionHandler}")
-		output.WriteLine($"{tabString}ProcessTerminationTimeout: {If(parseResult.InvocationConfiguration.ProcessTerminationTimeout.HasValue,
+		output.WriteLine($"{TabString}EnableDefaultExceptionHandler: {parseResult.InvocationConfiguration.EnableDefaultExceptionHandler}")
+		output.WriteLine($"{TabString}ProcessTerminationTimeout: {If(parseResult.InvocationConfiguration.ProcessTerminationTimeout.HasValue,
 			parseResult.InvocationConfiguration.ProcessTerminationTimeout.Value.ToString("c"),
 			"<null>")}")
-		output.WriteLine($"{tabString}Output: {parseResult.InvocationConfiguration.Output}")
-		output.WriteLine($"{tabString}Error: {parseResult.InvocationConfiguration.Error}")
+		output.WriteLine($"{TabString}Output: {parseResult.InvocationConfiguration.Output}")
+		output.WriteLine($"{TabString}Error: {parseResult.InvocationConfiguration.Error}")
 
 		Return 0
 	End Function

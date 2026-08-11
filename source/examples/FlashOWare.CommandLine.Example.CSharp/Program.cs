@@ -44,21 +44,21 @@ command.SetAction(async Task<int> (ParseResult parseResult, CancellationToken ca
 	Repository repository = await client.Repository.Get(owner, repo);
 	RateLimit rateLimit = client.GetLastApiInfo().RateLimit;
 
-	const string tabString = "    ";
+	const string TabString = "    ";
 	TextWriter output = parseResult.InvocationConfiguration.Output;
 
 	await output.WriteLineAsync($"""
 		Repository
-		{tabString}Full Name: {repository.FullName}
-		{tabString}Stargazers: {repository.StargazersCount}
-		{tabString}Watchers: {repository.SubscribersCount}
-		{tabString}Forks: {repository.ForksCount}
-		{tabString}Open Issues: {repository.OpenIssuesCount}
+		{TabString}Full Name: {repository.FullName}
+		{TabString}Stargazers: {repository.StargazersCount}
+		{TabString}Watchers: {repository.SubscribersCount}
+		{TabString}Forks: {repository.ForksCount}
+		{TabString}Open Issues: {repository.OpenIssuesCount}
 		""");
 	await output.WriteLineAsync($"""
 		Rate Limiting
-		{tabString}Requests per hour: {rateLimit.Limit - rateLimit.Remaining} / {rateLimit.Limit}
-		{tabString}Window resets at: {rateLimit.Reset.LocalDateTime:yyyy-MM-dd HH:mm:ss.fffffff}
+		{TabString}Requests per hour: {rateLimit.Limit - rateLimit.Remaining} / {rateLimit.Limit}
+		{TabString}Window resets at: {rateLimit.Reset.LocalDateTime:yyyy-MM-dd HH:mm:ss.fffffff}
 		""");
 
 	return 0;
@@ -89,20 +89,20 @@ internal sealed class ConfigCommandLineAction : SynchronousCommandLineAction
 {
 	public override int Invoke(ParseResult parseResult)
 	{
-		const string tabString = "    ";
+		const string TabString = "    ";
 		TextWriter output = parseResult.InvocationConfiguration.Output;
 
 		output.WriteLine($"""
 			Configuration
-			{tabString}EnablePosixBundling: {parseResult.Configuration.EnablePosixBundling}
+			{TabString}EnablePosixBundling: {parseResult.Configuration.EnablePosixBundling}
 			""");
 
 		output.WriteLine($"""
 			Invocation
-			{tabString}EnableDefaultExceptionHandler: {parseResult.InvocationConfiguration.EnableDefaultExceptionHandler}
-			{tabString}ProcessTerminationTimeout: {(parseResult.InvocationConfiguration.ProcessTerminationTimeout is { } timeout ? timeout.ToString("c") : "<null>")}
-			{tabString}Output: {parseResult.InvocationConfiguration.Output}
-			{tabString}Error: {parseResult.InvocationConfiguration.Error}
+			{TabString}EnableDefaultExceptionHandler: {parseResult.InvocationConfiguration.EnableDefaultExceptionHandler}
+			{TabString}ProcessTerminationTimeout: {(parseResult.InvocationConfiguration.ProcessTerminationTimeout is { } timeout ? timeout.ToString("c") : "<null>")}
+			{TabString}Output: {parseResult.InvocationConfiguration.Output}
+			{TabString}Error: {parseResult.InvocationConfiguration.Error}
 			""");
 
 		return 0;
