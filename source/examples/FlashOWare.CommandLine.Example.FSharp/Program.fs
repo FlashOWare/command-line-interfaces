@@ -11,7 +11,7 @@ open Octokit
 type private LanguageCommandLineAction() =
     inherit SynchronousCommandLineAction()
 
-    override this.Invoke(parseResult: ParseResult) =
+    override this.Invoke(parseResult: ParseResult) : int =
         let output = parseResult.InvocationConfiguration.Output
         output.WriteLine("F#")
         0
@@ -20,7 +20,7 @@ type private LanguageCommandLineAction() =
 type private ConfigCommandLineAction() =
     inherit SynchronousCommandLineAction()
 
-    override this.Invoke(parseResult: ParseResult) =
+    override this.Invoke(parseResult: ParseResult) : int =
         let tabString = "    "
         let output = parseResult.InvocationConfiguration.Output
 
@@ -45,6 +45,7 @@ let option = Option<bool>("--language", [| "-l"; "--lang" |],
 rootCommand.Options.Add(option)
 
 let command = Command("repository", "Display GitHub repository information.")
+command.Aliases.Add("repo")
 let argument = Argument<string>("FULL-NAME",
     Description = """The full name of the repository in the form of "owner/repo".""",
     Arity = ArgumentArity.ZeroOrOne,
@@ -94,5 +95,5 @@ let directive = Directive("config",
 rootCommand.Directives.Add(directive)
 
 let parseResult = rootCommand.Parse(Environment.GetCommandLineArgs() |> Array.skip 1)
-let result = parseResult.Invoke()
-exit result
+let exitCode = parseResult.Invoke()
+exit exitCode

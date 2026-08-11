@@ -18,6 +18,7 @@ Friend Module Program
 		rootCommand.Options.Add([option])
 
 		Dim command As New Command("repository", "Display GitHub repository information.")
+		command.Aliases.Add("repo")
 		Dim argument As New Argument(Of String)("FULL-NAME") With {
 			.Description = "The full name of the repository in the form of ""owner/repo"".",
 			.Arity = ArgumentArity.ZeroOrOne,

@@ -15,6 +15,7 @@ Option<bool> option = new("--language", ["-l", "--lang"])
 rootCommand.Options.Add(option);
 
 Command command = new("repository", "Display GitHub repository information.");
+command.Aliases.Add("repo");
 Argument<string> argument = new("FULL-NAME")
 {
 	Description = """The full name of the repository in the form of "owner/repo".""",
