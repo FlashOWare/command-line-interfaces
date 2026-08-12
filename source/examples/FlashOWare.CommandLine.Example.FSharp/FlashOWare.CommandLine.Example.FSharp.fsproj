@@ -22,4 +22,9 @@
     <ProjectReference Include="..\..\lib\FlashOWare.CommandLine.Introspection.OpenCli\FlashOWare.CommandLine.Introspection.OpenCli.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <TrimmerRootAssembly Include="FlashOWare.CommandLine.Introspection.CliSchema" />
+    <TrimmerRootAssembly Include="FlashOWare.CommandLine.Introspection.OpenCli" />
+  </ItemGroup>
+
 </Project>
