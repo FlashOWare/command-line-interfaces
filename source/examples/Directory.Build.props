@@ -4,6 +4,10 @@
           Condition="$([MSBuild]::GetPathOfFileAbove('Directory.Build.props', '$(MSBuildThisFileDirectory)../')) != ''" />
 
   <PropertyGroup>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <PropertyGroup>
     <PublishTrimmed>true</PublishTrimmed>
     <PublishAot>true</PublishAot>
     <InvariantGlobalization>true</InvariantGlobalization>
