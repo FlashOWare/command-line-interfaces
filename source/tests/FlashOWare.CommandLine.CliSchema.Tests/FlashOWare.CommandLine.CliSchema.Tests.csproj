@@ -1,0 +1,13 @@
+<Project Sdk="MSTest.Sdk/4.3.3">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <AssemblyName>FlashOWare.CommandLine.CliSchema.Tests</AssemblyName>
+    <RootNamespace>FlashOWare.CommandLine.CliSchema.Tests</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\lib\FlashOWare.CommandLine.CliSchema\FlashOWare.CommandLine.CliSchema.csproj" />
+  </ItemGroup>
+
+</Project>

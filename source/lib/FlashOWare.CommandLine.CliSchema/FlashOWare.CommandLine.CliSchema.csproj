@@ -3,7 +3,7 @@
   <PropertyGroup>
     <OutputType>Library</OutputType>
     <TargetFramework>net10.0</TargetFramework>
-    <AssemblyName>FlashOWare.CommandLine.Introspection.CliSchema</AssemblyName>
+    <AssemblyName>FlashOWare.CommandLine.CliSchema</AssemblyName>
     <RootNamespace>FlashOWare.CommandLine</RootNamespace>
   </PropertyGroup>
 

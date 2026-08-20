@@ -15,17 +15,19 @@
   <Folder Name="/lib/">
     <File Path="lib/.globalconfig" />
     <File Path="lib/Directory.Build.props" />
-    <Project Path="lib/FlashOWare.CommandLine.Introspection.CliSchema/FlashOWare.CommandLine.Introspection.CliSchema.csproj" />
-    <Project Path="lib/FlashOWare.CommandLine.Introspection.OpenCli/FlashOWare.CommandLine.Introspection.OpenCli.csproj" />
+    <Project Path="lib/FlashOWare.CommandLine.CliSchema/FlashOWare.CommandLine.CliSchema.csproj" />
+    <Project Path="lib/FlashOWare.CommandLine.OpenCli/FlashOWare.CommandLine.OpenCli.csproj" />
   </Folder>
   <Folder Name="/perf/">
     <File Path="perf/.globalconfig" />
     <File Path="perf/Directory.Build.props" />
-    <Project Path="perf/FlashOWare.CommandLine.Introspection.Benchmarks/FlashOWare.CommandLine.Introspection.Benchmarks.csproj" />
+    <Project Path="perf/FlashOWare.CommandLine.CliSchema.Benchmarks/FlashOWare.CommandLine.CliSchema.Benchmarks.csproj" />
+    <Project Path="perf/FlashOWare.CommandLine.OpenCli.Benchmarks/FlashOWare.CommandLine.OpenCli.Benchmarks.csproj" />
   </Folder>
   <Folder Name="/tests/">
     <File Path="tests/.globalconfig" />
     <File Path="tests/Directory.Build.props" />
-    <Project Path="tests/FlashOWare.CommandLine.Introspection.Tests/FlashOWare.CommandLine.Introspection.Tests.csproj" />
+    <Project Path="tests/FlashOWare.CommandLine.CliSchema.Tests/FlashOWare.CommandLine.CliSchema.Tests.csproj" />
+    <Project Path="tests/FlashOWare.CommandLine.OpenCli.Tests/FlashOWare.CommandLine.OpenCli.Tests.csproj" />
   </Folder>
 </Solution>

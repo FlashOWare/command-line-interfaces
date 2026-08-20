@@ -13,13 +13,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\lib\FlashOWare.CommandLine.Introspection.CliSchema\FlashOWare.CommandLine.Introspection.CliSchema.csproj" />
-    <ProjectReference Include="..\..\lib\FlashOWare.CommandLine.Introspection.OpenCli\FlashOWare.CommandLine.Introspection.OpenCli.csproj" />
+    <ProjectReference Include="..\..\lib\FlashOWare.CommandLine.CliSchema\FlashOWare.CommandLine.CliSchema.csproj" />
+    <ProjectReference Include="..\..\lib\FlashOWare.CommandLine.OpenCli\FlashOWare.CommandLine.OpenCli.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <TrimmerRootAssembly Include="FlashOWare.CommandLine.Introspection.CliSchema" />
-    <TrimmerRootAssembly Include="FlashOWare.CommandLine.Introspection.OpenCli" />
+    <TrimmerRootAssembly Include="FlashOWare.CommandLine.CliSchema" />
+    <TrimmerRootAssembly Include="FlashOWare.CommandLine.OpenCli" />
   </ItemGroup>
 
 </Project>
