@@ -3,6 +3,9 @@ is_global = true
 # CA1515: Consider making public types internal
 dotnet_diagnostic.CA1515.severity = none
 
+# CA1707: Identifiers should not contain underscores
+dotnet_diagnostic.CA1707.severity = none
+
 # https://learn.microsoft.com/dotnet/core/testing/mstest-analyzers/overview
 dotnet_diagnostic.MSTEST0015.severity = warning
 dotnet_diagnostic.MSTEST0019.severity = none
